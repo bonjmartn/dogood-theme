@@ -2,16 +2,16 @@
 
 // Include Scripts and CSS
 
-function theme_styles() {
+function dogood_theme_styles() {
 
 	wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/css/bootstrap-3.3.5.css' );
-	wp_enqueue_style( 'font_awesome', get_template_directory_uri() . '/font-awesome-4.5.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font_awesome', get_template_directory_uri() . '/font-awesome-4.6.3/css/font-awesome.min.css' );
 	wp_enqueue_style( 'main_css', get_template_directory_uri() . '/style.css' );
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_styles');
+add_action( 'wp_enqueue_scripts', 'dogood_theme_styles');
 
-function theme_js() {
+function dogood_theme_js() {
 
 	global $wp_scripts;
 
@@ -24,28 +24,50 @@ function theme_js() {
 	wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '', 'true');
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_js');
+add_action( 'wp_enqueue_scripts', 'dogood_theme_js');
+
+
+// Add WP Basic Features Support
+
+if ( ! function_exists( 'dogood_setup' ) ) :
+
+function dogood_setup() {
+
+	// Add Support for Feed Links
+
+	add_theme_support( 'automatic-feed-links' );
+
+	// Add Menu Support
+
+	add_theme_support ( 'menus' );
+
+	// Add Thumbnails Support
+
+	add_theme_support( 'post-thumbnails' );
+
+	// Add Support for Flexible Title Tag
+
+	add_theme_support( 'title-tag' );
+
+	}
+	endif;
+add_action( 'after_setup_theme', 'dogood_setup' );
 
 
 // Check for Front Page being used
-function themeslug_filter_front_page_template( $template ) {
+function dogood_filter_front_page_template( $template ) {
     return is_home() ? '' : $template;
 }
-add_filter( 'frontpage_template', 'themeslug_filter_front_page_template' );
-
-
-// Add Support for Flexible Title Tag
-add_theme_support( 'title-tag' );
-
+add_filter( 'frontpage_template', 'dogood_filter_front_page_template' );
 
 // Add Support for WooCommerce
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
+add_action( 'after_setup_theme', 'dogood_woocommerce_support' );
+function dogood_woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
 // Add Support for Google Fonts
-function google_fonts() {
+function dogood_google_fonts() {
   $query_args = array(
     'family' => 'Open+Sans:400,700,700italic,400italic',
     'subset' => 'latin,latin-ext',
@@ -53,28 +75,17 @@ function google_fonts() {
   wp_enqueue_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 }
             
-add_action('wp_enqueue_scripts', 'google_fonts');
-
-
-// Add Menu Support
-add_theme_support ( 'menus' );
-
-// Add Thumbnails Support
-add_theme_support( 'post-thumbnails' );
-
+add_action('wp_enqueue_scripts', 'dogood_google_fonts');
 
 // Content Width Requirement
-if ( ! isset( $content_width ) ) {
-	$content_width = 800;
+function dogood_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'strunk_content_width', 800 );
 }
-
-// Add Support for Feed Links
-add_theme_support( 'automatic-feed-links' );
-
+add_action( 'after_setup_theme', 'dogood_content_width', 0 );
 
 // MENUS!
 
-function register_theme_menus() {
+function dogood_register_theme_menus() {
 
 	register_nav_menus (
 		array (
@@ -86,12 +97,15 @@ function register_theme_menus() {
 require_once get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 // Register Menus
-add_action ( 'init', 'register_theme_menus');
+add_action ( 'init', 'dogood_register_theme_menus');
 
 
 // WIDGETS!
 
 require_once get_template_directory() . '/inc/widgets.php';
+
+// Include Sidebar Feature Widget
+require_once get_template_directory() . '/inc/cta-sidebar-widget.php';
 
 // Include Home Feature Widget
 require_once get_template_directory() . '/inc/home-feature-widget.php';
@@ -114,7 +128,7 @@ require_once get_template_directory() . '/inc/theme-customizer.php';
 
 // Adjust Wordpress Excerpt
 
-function wp_new_excerpt($text) {
+function dogood_wp_new_excerpt($text) {
 	if ($text == '') 	{
 		$text = get_the_content('');
 		$text = strip_shortcodes( $text );
@@ -134,6 +148,6 @@ function wp_new_excerpt($text) {
 }
 
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'wp_new_excerpt');
+add_filter('get_the_excerpt', 'dogood_wp_new_excerpt');
 
 ?>

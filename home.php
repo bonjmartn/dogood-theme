@@ -22,7 +22,7 @@
         </em></p>            
 
         <p><?php if ( has_post_thumbnail() ) : ?>
-        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+        <?php the_post_thumbnail( 'large' ); ?>
         <?php endif; ?></p>
 
         <?php the_excerpt(); ?>
@@ -32,10 +32,10 @@
         <?php endwhile; else: ?>
 
         <div class="page-header">
-        <h1>Oh no!</h1>
+            <h1 class="page-title"><?php _e( 'Oh no!', 'do-good-free' ); ?></h1>
         </div>
 
-        <p>No content is appearing for this page!</p>
+        <p><?php _e( 'No content is appearing for this page!', 'do-good-free' ); ?></p>
 
         <?php endif; ?>
 
@@ -53,6 +53,7 @@
                 <p>&nbsp;</p>
         
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>></div>
+        
     </div>
       
       <div class="col span_4_of_12">

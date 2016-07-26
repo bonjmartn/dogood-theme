@@ -5,7 +5,7 @@ DO GOOD 501(C) THEME
 Thanks for using the Do Good 501(c) theme. This WordPress theme was built for non-profit organizations, but you can use it for any website.
 
 The theme's main informational page is at:
-http://www.zenwebthemes.com/shop-themes/do-good-free-501c/
+https://www.zenwebthemes.com/shop-themes/do-good-free-501c/
 
 ------------------------------
 FREE AND PREMIUM VERSIONS
@@ -39,20 +39,20 @@ DEMONSTRATION SITE
 ------------------------------
 
 If you haven't seen the theme demo, you can take a look here:
-http://www.zenwebthemes.com/dogood501c-demo/
+https://www.zenwebthemes.com/dogood501c-demo/
 
 ------------------------------
 DOCUMENTATION
 ------------------------------
 
 Documentation for this theme is available at:
-http://www.zenwebthemes.com/documentation/do-good-free-501c/
+https://www.zenwebthemes.com/documentation/do-good-free-501c/
 
 ------------------------------
 HOW TO GET HELP
 ------------------------------
 
-Please go to http://www.zenwebthemes.com/support/ to see all of the support options.
+Please go to https://www.zenwebthemes.com/theme-support/ to see all of the support options.
 
 ------------------------------
 UPDATES AND FREEBIES
@@ -66,4 +66,4 @@ If you sign up for the mailing list, you'll get:
 - Other notices about Zen Web Themes, like new theme releases and discounts
 
 Sign up here:
-http://www.zenwebthemes.com/shop-themes/get-all-free-themes/
+https://www.zenwebthemes.com/shop-themes/get-all-free-themes/
