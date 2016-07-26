@@ -46,7 +46,7 @@ DOCUMENTATION
 ------------------------------
 
 Documentation for this theme is available at:
-https://www.zenwebthemes.com/documentation/do-good-free-501c/
+https://www.zenwebthemes.com/documentation/do-good-501c/
 
 ------------------------------
 HOW TO GET HELP
