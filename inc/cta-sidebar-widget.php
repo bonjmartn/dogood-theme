@@ -1,25 +1,25 @@
 <?php 
 
-// register ctabar widget
-function register_ctabutton_widget() {
-    register_widget( 'ctabutton_widget' );
+// register ctasidebar widget
+function register_ctasidebar_widget() {
+    register_widget( 'ctasidebar_widget' );
 }
-add_action( 'widgets_init', 'register_ctabutton_widget' );
+add_action( 'widgets_init', 'register_ctasidebar_widget' );
 
 
 /**
- * Adds ctabar_Widget widget.
+ * Adds ctasidebar_Widget widget.
  */
-class ctabutton_Widget extends WP_Widget {
+class ctasidebar_Widget extends WP_Widget {
 
   /**
    * Register widget with WordPress.
    */
   function __construct() {
     parent::__construct(
-      'ctabutton_widget', // Base ID
-      __( 'Call to Action Button', 'do-good' ), // Name
-      array( 'description' => __( 'Use me for the Homepage Button', 'do-good' ), ) // Args
+      'ctasidebar_widget', // Base ID
+      __( 'Sidebar Feature', 'do-good' ), // Name
+      array( 'description' => __( 'Featured content with a button for the sidebar', 'do-good' ), ) // Args
     );
   }
 
@@ -32,6 +32,8 @@ class ctabutton_Widget extends WP_Widget {
    * @param array $instance Saved values from database.
    */
   public function widget( $args, $instance ) {
+    echo ( '<div class="cta-sidebar">');
+
     echo $args['before_widget'];
     if ( ! empty( $instance['title'] ) ) {
       echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
@@ -39,10 +41,17 @@ class ctabutton_Widget extends WP_Widget {
     // if the button text field is set
     $text = sanitize_text_field( $instance['text'] );
     $link = esc_url( $instance['link'] );
+    $linetext = sanitize_text_field( $instance['linetext'] );    
+
+    if ( ! empty( $instance['linetext'] ) ) {
+      echo sprintf( '<p>' . $linetext . '</p>');
+    }
 
     if ( ! empty( $instance['text'] ) ) {
-     echo sprintf( '<a href="' . $link . '"><button>' . $text . '</button></a>');
+      echo sprintf( '<a href="' . $link . '"><button>' . $text . '</button></a>');
     }
+
+    echo ( '</div>');
 
     echo $args['after_widget'];
   }
@@ -55,9 +64,10 @@ class ctabutton_Widget extends WP_Widget {
    * @param array $instance Previously saved values from database.
    */
   public function form( $instance ) {
-    $title = ! empty( $instance['title'] ) ? $instance['title'] : __( '', 'do-good' );
+    $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Call to Action Title', 'do-good' );
     $text = ! empty( $instance['text'] ) ? $instance['text'] : __( 'Button Text', 'do-good' );
     $link = ! empty( $instance['link'] ) ? $instance['link'] : __( 'Button Link', 'do-good' );
+    $linetext = ! empty( $instance['linetext'] ) ? $instance['linetext'] : __( 'A Line of Text', 'do-good' );
     ?>
 
 
@@ -65,6 +75,12 @@ class ctabutton_Widget extends WP_Widget {
     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'do-good' ); ?></label> 
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" 
     value="<?php echo esc_attr( $title ); ?>">
+    </p>
+
+    <p>
+    <label for="<?php echo $this->get_field_id('linetext_field'); ?>"><?php _e('Enter a line of text', 'do-good'); ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id('linetext_field'); ?>" name="<?php echo $this->get_field_name('linetext_field'); ?>" type="text" 
+    value="<?php echo esc_attr( $linetext ); ?>" />
     </p>
 
     <p>
@@ -97,7 +113,8 @@ class ctabutton_Widget extends WP_Widget {
     $instance['title'] = strip_tags( $new_instance['title'] );
     $instance['text'] = strip_tags( $new_instance['text_field'] );
     $instance['link'] = strip_tags( $new_instance['link_field'] );
+    $instance['linetext'] = strip_tags( $new_instance['linetext_field'] );
     return $instance;
   }
 
-} // class ctabar_Widget
+} // class ctasidebar_Widget
