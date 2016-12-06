@@ -69,7 +69,7 @@ function dogood_woocommerce_support() {
 // Add Support for Google Fonts
 function dogood_google_fonts() {
   $query_args = array(
-    'family' => 'Open+Sans:400,700,700italic,400italic',
+    'family' => 'Open+Sans:400,700,700italic,400italic|Proza+Libre:400,600,700,700italic,600italic,400italic|Roboto:400,700,400italic,700italic|Lato:400,400italic,700italic,700|Slabo+27px|Source+Sans+Pro:400,400italic,700,700italic|Raleway:400,400italic,700,700italic|Lora:400,400italic,700italic,700|Droid+Sans:400,700|Ubuntu:400,400italic,700,700italic|Arimo:400,400italic,700,700italic',
     'subset' => 'latin,latin-ext',
   );
   wp_enqueue_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
@@ -89,7 +89,7 @@ function dogood_register_theme_menus() {
 
 	register_nav_menus (
 		array (
-			'header-menu' => __( 'Header Menu', 'do-good-free')
+			'header-menu' => __( 'Header Menu', 'do-good')
 	));
 }
 

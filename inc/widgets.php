@@ -21,8 +21,8 @@ function footer_widgets( $name, $id, $description ) {
 		'description' => sprintf( $description ),
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
-		'before_title' => '<p class="footer-widget-title">',
-		'after_title' => '</p>'
+		'before_title' => '<h3 class="footer-widget-title">',
+		'after_title' => '</h3>'
 	));
 }
 
@@ -34,7 +34,7 @@ function social_widget( $name, $id, $description ) {
 		'description' => sprintf( $description ),
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '<h3>',
+		'before_title' => '<h3 class="footer-widget-title">',
 		'after_title' => '</h3>'
 	));
 }
@@ -51,7 +51,8 @@ create_widget( 'Headline Button', 'front-button', 'A button for the headline are
 
 // Create Widget areas for Pages and Blog Posts
 
-create_widget( 'Blog Sidebar', 'blog', 'Displays on the right of posts and pages' );
+create_widget( 'Page Sidebar', 'page', 'Displays on the side of pages' );
+create_widget( 'Blog Sidebar', 'blog', 'Displays on the right of pages and posts' );
 
 // Create Widget areas for Footer
 

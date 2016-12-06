@@ -26,47 +26,43 @@
 </div>
 
 <div class="main-header">
-    <div class="page-container">
+  <div class="page-container">
 
+     <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>">
+                    <?php if( get_theme_mod( 'dogood_logo' ) != "" ): ?>
+                    <img src="<?php echo get_theme_mod( 'dogood_logo' ); ?>">
+                    </a>
+                    <?php endif; ?>
+        </div>
 
- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>">
-                <?php if( get_theme_mod( 'dogood_logo' ) != "" ): ?>
-                <img src="<?php echo get_theme_mod( 'dogood_logo' ); ?>">
-                </a>
-                <?php endif; ?>
-    </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="defaultNavbar1">
+                    <?php
+                    wp_nav_menu( array(
+                      'menu'              => 'header-menu',
+                      'theme_location'    => 'header-menu',
+                      'depth'             => 2,
+                      'container'         => 'false',
+                      'container_class'   => 'collapse navbar-collapse',
+                      'container_id'      => 'defaultNavbar1',
+                      'menu_class'        => 'nav navbar-nav',
+                      'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                      'walker'            => new wp_bootstrap_navwalker())
+                    );
+                    ?>
+                </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right" id="defaultNavbar1">
-                <?php
-                wp_nav_menu( array(
-                  'menu'              => 'header-menu',
-                  'theme_location'    => 'header-menu',
-                  'depth'             => 2,
-                  'container'         => 'false',
-                  'container_class'   => 'collapse navbar-collapse',
-                  'container_id'      => 'defaultNavbar1',
-                  'menu_class'        => 'nav navbar-nav',
-                  'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                  'walker'            => new wp_bootstrap_navwalker())
-                );
-                ?>
-            </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
-    </div>
+  </div>
 </div>
-</div> <!-- end of full container -->

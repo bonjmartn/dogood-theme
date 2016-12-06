@@ -1,5 +1,5 @@
 /*
-Theme Name: Do Good Free
+Theme Name: Do Good
 Theme URI: https://www.zenwebthemes.com/shop-themes/do-good-501c/
 Author: Bonnie Martin
 Author URI: https://www.zenwebthemes.com
@@ -7,8 +7,8 @@ Description: Do Good 501c is a simple theme built for non-profit organizations
 Version: 2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, right-sidebar, custom-header, custom-menu, featured-images, footer-widgets, theme-options
-Text Domain: do-good-free
+Tags: two-columns, left-sidebar, right-sidebar, full-width-template, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, theme-options
+Text Domain: do-good
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -576,6 +576,15 @@ a:active {
 	text-decoration: none;
 }
 
+
+/* =Give Form Customizations
+----------------------------------------------- */
+
+#give-form-141 {
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
 /* =Bootstrap and Font Awesome Icon Customizations
 ----------------------------------------------- */
 
@@ -603,15 +612,13 @@ a:active {
 	font-size: 18px;
 }
 
+
+
 /* =Bootstrap Nav Customizations
 ----------------------------------------------- */
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	background-color: #FFFFFF;
-}
-
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-	background-color: #52be61;
 }
 
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
@@ -638,6 +645,7 @@ a:active {
 	border-color: #ffffff;
 	background-color: #ffffff;
 }
+
 
 /* =Content
 ----------------------------------------------- */
@@ -968,6 +976,7 @@ footer .widget {
 footer h3 {
 	color: #FFFFFF;
 	font-weight: bold;
+	font-size: 18px;
 }
 
 footer a:hover {
@@ -980,12 +989,6 @@ footer a:hover {
 .cta-sidebar,
 .cta-sidebar h3 {
 	text-align: center;
-}
-
-.cta-sidebar button,
-.home-widget button {
-  background-color: #52be61;
-  border-color: #52be61;
 }
 
 .cta-sidebar button:hover {

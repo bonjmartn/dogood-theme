@@ -10,11 +10,11 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Hmm. That page doesn&rsquo;t exist.', 'do-good-free' ); ?></h1>
+					<h1 class="page-title"><?php _e( 'Hmm. That page doesn&rsquo;t exist.', 'do-good' ); ?></h1>
 				</header>
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'do-good-free' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'do-good' ); ?></p>
 
 					<?php get_search_form(); ?>
 
@@ -23,7 +23,7 @@ get_header(); ?>
 
 		</div>
 
-	<?php get_sidebar( 'page' ); ?>
+	<?php get_sidebar( ' page' ); ?>
 
 	</div>
 

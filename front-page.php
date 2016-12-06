@@ -86,7 +86,7 @@
         <?php the_content(); ?>
 
         <?php endwhile; else : ?>
-        <p><?php _e( 'Sorry, no posts matched your criteria.', 'do-good-free' ); ?></p>
+        <p><?php _e( 'Sorry, no posts matched your criteria.', 'do-good' ); ?></p>
 
         <?php endif; ?> 
 

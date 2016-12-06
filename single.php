@@ -30,14 +30,14 @@
 
       <?php
         $defaults = array(
-          'before'           => '<p>' . __( 'Pages:', 'do-good-free' ),
+          'before'           => '<p>' . __( 'Pages:', 'do-good' ),
           'after'            => '</p>',
           'link_before'      => '',
           'link_after'       => '',
           'next_or_number'   => 'number',
           'separator'        => ' ',
-          'nextpagelink'     => __( 'Next page', 'do-good-free' ),
-          'previouspagelink' => __( 'Previous page', 'do-good-free' ),
+          'nextpagelink'     => __( 'Next page', 'do-good' ),
+          'previouspagelink' => __( 'Previous page', 'do-good' ),
           'pagelink'         => '%',
           'echo'             => 1
         );
